@@ -15,7 +15,7 @@ class cartModel extends ChangeNotifier{
     ["Banana", "2.50", "images/banana.png", Colors.yellow],
     ["Chicken", "12.80", "images/chicken.png", Colors.brown],
     ["Water", "1.00", "images/water.png", Colors.blue],
-    ["Water", "1.00", "images/burgerbig.png", Colors.yellow],
+    ["burger", "1.00", "images/burgerbig.png", Colors.yellow],
 
 
 
@@ -45,5 +45,6 @@ class cartModel extends ChangeNotifier{
     }
     return totalPrice.toStringAsFixed(2);
   }
+
 
 }

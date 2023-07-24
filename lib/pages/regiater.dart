@@ -28,11 +28,11 @@ class _RegisterState extends State<Register> {
   }
 
 void SignUp() async {
-
-    //-----
+if(passconfrim()) {
+  //-----
   showDialog(
       context: context,
-      builder: (context){
+      builder: (context) {
         return Center(
           child: CircularProgressIndicator(),
         );
@@ -44,7 +44,8 @@ void SignUp() async {
   //-----
 
   try {
-    final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    final credential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
       email: emailController.text.trim(),
       password: passwordController.text.trim(),
     );
@@ -58,8 +59,19 @@ void SignUp() async {
   } catch (e) {
     print(e);
   }
-
 }
+}
+//------------------ check pass and con pass
+  bool passconfrim () {
+    if(passwordController.text.trim()== Config.text.trim()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  //----------------------
 
   @override
   Widget build(BuildContext context) {
